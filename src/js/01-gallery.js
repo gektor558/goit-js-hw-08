@@ -4,11 +4,6 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import { galleryItems } from './gallery-items';
 // Change code below this line
 
-const refs = {
-    galleryList: document.querySelector('.gallery'),
-};
-
-
 
 function galleryMarkup(array) {
   const markup = array
@@ -32,3 +27,4 @@ renderGalleryList(galleryItems);
 
 
 new simpleLightbox('.gallery a', { captionsData: 'alt', captionPosition: 'bottom', captionDelay: 250, });
+
