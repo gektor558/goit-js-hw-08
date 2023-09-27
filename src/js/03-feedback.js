@@ -48,7 +48,7 @@ function getFromLocalStorage() {
     };  
 };
 
-//3 step
+
 refs.formUserEl.addEventListener("submit", onDataSubmit);
 
 function onDataSubmit (event) {
@@ -58,6 +58,10 @@ function onDataSubmit (event) {
         email: refs.saveUserEmailEl.value,
         message: refs.saveUserMessageEl.value,
     };
+    if (userData.email.trim() === '' || userData.message.trim() === '') {
+        alert('Будь ласка, заповніть усі обов\'язкові поля');
+        return; 
+    }
 
     refs.formUserEl.reset();
     localStorage.removeItem(refs.localStorageKey);

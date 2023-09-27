@@ -1,7 +1,6 @@
 import { galleryItems } from './gallery-items.js';
-import "simplelightbox/dist/simple-lightbox.min.css";
-import simpleLightbox from './gallery-items.js';
-// Change code below this line
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import SimpleLightbox from 'simplelightbox'; // Зверніть увагу, що імпортується SimpleLightbox
 
 console.log(galleryItems);
 
@@ -12,10 +11,12 @@ const markup = galleryItems.map(el => {
   <a class="gallery__link" href="${el.original}">
      <img class="gallery__image" src="${el.preview}" alt="${el.description}" />
   </a>
-</li>`
-}).join('\n')
+</li>`;
+}).join('\n');
 
 galleryList.innerHTML = markup;
 
-let lightbox = new simpleLightbox('.gallery a', {captionsData: 'alt', captionDelay: 250});
-
+let lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
